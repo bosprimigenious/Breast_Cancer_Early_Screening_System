@@ -27,7 +27,8 @@ i18n
     detection: {
       order: ['localStorage', 'navigator', 'htmlTag'],
       caches: ['localStorage']
-    }
+    },
+    lng: 'zh-CN' // 强制默认语言为中文
   })
 
 export default i18n

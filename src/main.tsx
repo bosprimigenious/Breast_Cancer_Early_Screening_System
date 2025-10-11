@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { ConfigProvider, theme } from 'antd'
 import zhCN from 'antd/locale/zh_CN'
-import enUS from 'antd/locale/en_US'
 import { ThemeProvider, useTheme } from './contexts/ThemeContext'
 import App from './App.tsx'
 import './index.css'
@@ -14,8 +13,9 @@ const AppWithTheme: React.FC = () => {
   const [locale, setLocale] = React.useState(zhCN)
   
   React.useEffect(() => {
-    const savedLang = localStorage.getItem('i18nextLng') || 'zh-CN'
-    setLocale(savedLang === 'en-US' ? enUS : zhCN)
+    // 强制设置为中文，忽略用户之前的语言选择
+    localStorage.setItem('i18nextLng', 'zh-CN')
+    setLocale(zhCN)
   }, [])
   
   return (

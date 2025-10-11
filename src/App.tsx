@@ -1,6 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import ResponsiveLayout from './components/ResponsiveLayout'
+import RedirectToHome from './components/RedirectToHome'
 import Home from './pages/Home'
 import DataUpload from './pages/DataUpload'
 import RiskPrediction from './pages/RiskPrediction'
@@ -24,6 +25,8 @@ const App: React.FC = () => {
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/contact" element={<ContactUs />} />
+          {/* 捕获所有其他路径并重定向到主页 */}
+          <Route path="*" element={<RedirectToHome />} />
         </Routes>
       </ResponsiveLayout>
     </SidebarProvider>
