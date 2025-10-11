@@ -11,18 +11,18 @@ import {
   Alert,
   Timeline,
   Statistic,
-  Progress,
+  // Progress,
   Collapse
 } from 'antd'
 import { 
-  HeartOutlined, 
+  // HeartOutlined, 
   WarningOutlined, 
   CalendarOutlined,
-  MedicineBoxOutlined,
-  BulbOutlined,
+  // MedicineBoxOutlined,
+  // BulbOutlined,
   CheckCircleOutlined,
   ExclamationCircleOutlined,
-  InfoCircleOutlined
+  // InfoCircleOutlined
 } from '@ant-design/icons'
 
 const { Title, Paragraph, Text } = Typography

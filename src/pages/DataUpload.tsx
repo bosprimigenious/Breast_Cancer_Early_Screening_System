@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import { 
   Card, 
-  Upload, 
+  // Upload, 
   Button, 
   message, 
   Typography, 
@@ -24,7 +24,7 @@ import {
 import { useDropzone } from 'react-dropzone'
 
 const { Title, Paragraph, Text } = Typography
-const { Dragger } = Upload
+// const { Dragger } = Upload
 
 interface UploadedFile {
   id: string

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { 
   Card, 
   Button, 
@@ -10,7 +10,7 @@ import {
   Space,
   Alert,
   Spin,
-  Divider
+  // Divider
 } from 'antd'
 import { 
   PlayCircleOutlined, 
@@ -19,7 +19,7 @@ import {
   CheckCircleOutlined,
   InfoCircleOutlined
 } from '@ant-design/icons'
-import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
+import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
 
 const { Title, Paragraph, Text } = Typography
 

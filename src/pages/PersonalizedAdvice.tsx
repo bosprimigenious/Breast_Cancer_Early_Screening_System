@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { 
   Card, 
   Form, 
@@ -11,7 +11,7 @@ import {
   Timeline,
   Tag,
   Space,
-  Divider,
+  // Divider,
   Alert,
   List,
   Avatar
@@ -20,7 +20,7 @@ import {
   UserOutlined, 
   CalendarOutlined, 
   HeartOutlined,
-  MedicineBoxOutlined,
+  // MedicineBoxOutlined,
   ClockCircleOutlined,
   CheckCircleOutlined,
   ExclamationCircleOutlined
