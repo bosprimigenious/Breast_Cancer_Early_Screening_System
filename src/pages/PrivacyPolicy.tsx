@@ -124,7 +124,7 @@ const PrivacyPolicy: React.FC = () => {
               如果您对本隐私政策有任何疑问或需要行使您的权利，请通过以下方式联系我们：
             </Paragraph>
             <ul>
-              <li>邮箱：privacy@breastcancerscreening.com</li>
+              <li>邮箱：bosprimigenious@foxmail.com</li>
               <li>电话：400-123-4567</li>
               <li>地址：北京市朝阳区科技园区创新大厦A座1001室</li>
             </ul>

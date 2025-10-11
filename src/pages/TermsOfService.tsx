@@ -150,7 +150,7 @@ const TermsOfService: React.FC = () => {
               如有任何问题或建议，请通过以下方式联系我们：
             </Paragraph>
             <ul>
-              <li>邮箱：support@breastcancerscreening.com</li>
+              <li>邮箱：bosprimigenious@foxmail.com</li>
               <li>电话：400-123-4567</li>
               <li>在线客服：工作日9:00-18:00</li>
               <li>地址：北京市朝阳区科技园区创新大厦A座1001室</li>

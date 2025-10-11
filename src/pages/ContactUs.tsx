@@ -35,7 +35,7 @@ const ContactUs: React.FC = () => {
     {
       icon: <MailOutlined style={{ fontSize: '24px', color: 'var(--primary-color)' }} />,
       title: '邮箱地址',
-      content: 'support@breastcancerscreening.com',
+      content: 'bosprimigenious@foxmail.com',
       description: '24小时内回复'
     },
     {
@@ -188,7 +188,7 @@ const ContactUs: React.FC = () => {
                   <li>操作步骤</li>
                 </ul>
                 <Text type="secondary">
-                  技术支持邮箱：tech@breastcancerscreening.com
+                  技术支持邮箱：bosprimigenious@foxmail.com
                 </Text>
               </Space>
             </Card>
