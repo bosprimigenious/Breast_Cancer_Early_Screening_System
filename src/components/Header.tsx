@@ -77,7 +77,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
           />
         )}
         <img 
-          src="/logo.svg" 
+            src="./logo.svg"
           alt="Logo" 
           style={{ 
             height: isMobile ? '24px' : '32px', 
