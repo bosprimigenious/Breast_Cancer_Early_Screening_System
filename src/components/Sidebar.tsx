@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Layout, Menu, Typography, Button } from 'antd'
 import {
   UploadOutlined,
@@ -21,6 +21,18 @@ const Sidebar: React.FC = () => {
   const { t } = useTranslation()
   const location = useLocation()
   const navigate = useNavigate()
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    
+    checkIsMobile()
+    window.addEventListener('resize', checkIsMobile)
+    
+    return () => window.removeEventListener('resize', checkIsMobile)
+  }, [])
 
   const menuItems = [
     {
@@ -52,6 +64,14 @@ const Sidebar: React.FC = () => {
 
   const handleMenuClick = ({ key }: { key: string }) => {
     navigate(key)
+    // 在移动端点击菜单项后自动关闭抽屉
+    if (isMobile) {
+      // 这里可以通过context或者props来关闭drawer
+      // 暂时通过重新加载页面来关闭drawer
+      setTimeout(() => {
+        window.location.reload()
+      }, 100)
+    }
   }
 
   return (

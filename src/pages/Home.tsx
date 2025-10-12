@@ -68,43 +68,43 @@ const Home: React.FC = () => {
         </Paragraph>
       </div>
 
-      <Row gutter={[24, 24]} style={{ marginBottom: '40px' }}>
-        <Col xs={24} sm={12} lg={6}>
-          <Card>
+      <Row gutter={[16, 16]} style={{ marginBottom: '32px' }}>
+        <Col xs={12} sm={12} lg={6}>
+          <Card style={{ textAlign: 'center', height: '100%' }}>
             <Statistic
               title={t('home.todayScreening')}
               value={156}
-              valueStyle={{ color: 'var(--primary-color)' }}
+              valueStyle={{ color: 'var(--primary-color)', fontSize: 'clamp(18px, 4vw, 24px)' }}
               suffix="例"
             />
           </Card>
         </Col>
-        <Col xs={24} sm={12} lg={6}>
-          <Card>
+        <Col xs={12} sm={12} lg={6}>
+          <Card style={{ textAlign: 'center', height: '100%' }}>
             <Statistic
               title={t('home.highRisk')}
               value={12}
-              valueStyle={{ color: 'var(--error-color)' }}
+              valueStyle={{ color: 'var(--error-color)', fontSize: 'clamp(18px, 4vw, 24px)' }}
               suffix="例"
             />
           </Card>
         </Col>
-        <Col xs={24} sm={12} lg={6}>
-          <Card>
+        <Col xs={12} sm={12} lg={6}>
+          <Card style={{ textAlign: 'center', height: '100%' }}>
             <Statistic
               title={t('home.accuracy')}
               value={94.2}
-              valueStyle={{ color: 'var(--success-color)' }}
+              valueStyle={{ color: 'var(--success-color)', fontSize: 'clamp(18px, 4vw, 24px)' }}
               suffix="%"
             />
           </Card>
         </Col>
-        <Col xs={24} sm={12} lg={6}>
-          <Card>
+        <Col xs={12} sm={12} lg={6}>
+          <Card style={{ textAlign: 'center', height: '100%' }}>
             <Statistic
               title={t('home.avgTime')}
               value={8.5}
-              valueStyle={{ color: 'var(--warning-color)' }}
+              valueStyle={{ color: 'var(--warning-color)', fontSize: 'clamp(18px, 4vw, 24px)' }}
               suffix="秒"
             />
           </Card>
@@ -115,27 +115,46 @@ const Home: React.FC = () => {
         {t('home.features')}
       </Title>
 
-      <Row gutter={[24, 24]}>
+      <Row gutter={[16, 16]}>
         {features.map((feature, index) => (
           <Col xs={24} sm={12} lg={6} key={index}>
             <Card
               hoverable
               style={{ height: '100%', textAlign: 'center' }}
-              bodyStyle={{ padding: '32px 24px' }}
+              bodyStyle={{ padding: 'clamp(20px, 4vw, 32px) clamp(16px, 3vw, 24px)' }}
             >
               <div style={{ marginBottom: '16px' }}>
-                {feature.icon}
+                {React.cloneElement(feature.icon, {
+                  style: { 
+                    fontSize: 'clamp(24px, 5vw, 32px)', 
+                    color: feature.icon.props.style?.color 
+                  }
+                })}
               </div>
-              <Title level={4} style={{ marginBottom: '12px' }}>
+              <Title level={4} style={{ 
+                marginBottom: '12px',
+                fontSize: 'clamp(16px, 3vw, 20px)'
+              }}>
                 {feature.title}
               </Title>
-              <Paragraph style={{ color: 'var(--text-color-secondary)', marginBottom: '20px' }}>
+              <Paragraph style={{ 
+                color: 'var(--text-color-secondary)', 
+                marginBottom: '20px',
+                fontSize: 'clamp(12px, 2.5vw, 14px)',
+                lineHeight: 1.5
+              }}>
                 {feature.description}
               </Paragraph>
               <Button 
                 type="primary" 
                 icon={<ArrowRightOutlined />}
                 onClick={() => navigate(feature.path)}
+                size="large"
+                style={{ 
+                  width: '100%',
+                  height: '44px',
+                  fontSize: '16px'
+                }}
               >
                 {t('common.start')}
               </Button>
@@ -152,13 +171,20 @@ const Home: React.FC = () => {
           <Paragraph style={{ color: 'white', fontSize: '16px', marginBottom: '24px' }}>
             {t('home.startJourneyDesc')}
           </Paragraph>
-          <Space size="large">
+          <Space size="large" direction="vertical" style={{ width: '100%' }}>
             <Button 
               type="primary" 
               size="large"
               icon={<UploadOutlined />}
               onClick={() => navigate('/upload')}
-              style={{ background: 'white', color: 'var(--primary-color)', border: 'none' }}
+              style={{ 
+                background: 'white', 
+                color: 'var(--primary-color)', 
+                border: 'none',
+                width: '100%',
+                height: '48px',
+                fontSize: '18px'
+              }}
             >
               {t('home.uploadData')}
             </Button>
@@ -166,7 +192,14 @@ const Home: React.FC = () => {
               size="large"
               icon={<HeartOutlined />}
               onClick={() => navigate('/education')}
-              style={{ background: 'rgba(255,255,255,0.2)', color: 'white', border: '1px solid white' }}
+              style={{ 
+                background: 'rgba(255,255,255,0.2)', 
+                color: 'white', 
+                border: '1px solid white',
+                width: '100%',
+                height: '48px',
+                fontSize: '18px'
+              }}
             >
               {t('home.learnHealth')}
             </Button>

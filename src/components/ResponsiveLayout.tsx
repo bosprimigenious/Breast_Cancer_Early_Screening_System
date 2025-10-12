@@ -13,51 +13,109 @@ interface ResponsiveLayoutProps {
 
 const ResponsiveLayout: React.FC<ResponsiveLayoutProps> = ({ children }) => {
   const [isMobile, setIsMobile] = useState(false)
+  const [isTablet, setIsTablet] = useState(false)
   const [drawerVisible, setDrawerVisible] = useState(false)
   const { collapsed } = useSidebar()
 
   useEffect(() => {
-    const checkIsMobile = () => {
-      setIsMobile(window.innerWidth < 768)
+    const checkDeviceType = () => {
+      const width = window.innerWidth
+      setIsMobile(width < 768)
+      setIsTablet(width >= 768 && width < 1200)
     }
     
-    checkIsMobile()
-    window.addEventListener('resize', checkIsMobile)
+    checkDeviceType()
+    window.addEventListener('resize', checkDeviceType)
     
-    return () => window.removeEventListener('resize', checkIsMobile)
+    return () => window.removeEventListener('resize', checkDeviceType)
   }, [])
 
   const handleDrawerClose = () => {
     setDrawerVisible(false)
   }
 
+  // 移动端布局
   if (isMobile) {
     return (
-      <Layout style={{ minHeight: '100vh', background: 'var(--background-color)', display: 'flex', flexDirection: 'column' }}>
+      <Layout style={{ 
+        minHeight: '100vh', 
+        background: 'var(--background-color)', 
+        display: 'flex', 
+        flexDirection: 'column' 
+      }}>
         <Header onMenuClick={() => setDrawerVisible(true)} />
         <Content style={{ 
-          margin: '16px 8px',
+          margin: '12px 8px',
           padding: 16,
           background: 'var(--card-background)',
-          borderRadius: 8,
+          borderRadius: 12,
           flex: 1,
           boxShadow: 'var(--shadow)',
-          transition: 'all 0.3s ease'
+          transition: 'all 0.3s ease',
+          overflow: 'auto',
+          minHeight: 'calc(100vh - 120px)'
         }}>
           {children}
         </Content>
         <Footer />
         
         <Drawer
-          title="菜单"
+          title="导航菜单"
           placement="left"
           onClose={handleDrawerClose}
           open={drawerVisible}
           width={280}
           bodyStyle={{ padding: 0 }}
+          headerStyle={{ 
+            background: 'var(--card-background)',
+            borderBottom: '1px solid var(--border-color)'
+          }}
         >
           <Sidebar />
         </Drawer>
+      </Layout>
+    )
+  }
+
+  // 平板端布局
+  if (isTablet) {
+    return (
+      <Layout style={{ 
+        minHeight: '100vh', 
+        background: 'var(--background-color)', 
+        display: 'flex', 
+        flexDirection: 'column' 
+      }}>
+        <div style={{ display: 'flex', flex: 1 }}>
+          <Sidebar />
+          <Layout 
+            className="main-content"
+            style={{ 
+              marginLeft: collapsed ? '80px' : '200px', 
+              transition: 'margin-left 0.2s ease', 
+              flex: 1, 
+              display: 'flex', 
+              flexDirection: 'column',
+              minWidth: 0,
+              width: collapsed ? 'calc(100% - 80px)' : 'calc(100% - 200px)'
+            }}>
+            <Header />
+            <Content style={{ 
+              margin: '20px',
+              padding: 20,
+              background: 'var(--card-background)',
+              borderRadius: 12,
+              flex: 1,
+              boxShadow: 'var(--shadow)',
+              transition: 'all 0.3s ease',
+              overflow: 'auto',
+              width: 'calc(100% - 40px)'
+            }}>
+              {children}
+            </Content>
+          </Layout>
+        </div>
+        <Footer />
       </Layout>
     )
   }

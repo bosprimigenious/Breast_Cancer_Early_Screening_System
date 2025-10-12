@@ -54,7 +54,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
   return (
     <AntHeader style={{ 
       background: 'var(--card-background)', 
-      padding: isMobile ? '0 16px' : '0 24px',
+      padding: isMobile ? '0 12px' : '0 24px',
       borderBottom: '1px solid var(--border-color)',
       display: 'flex',
       alignItems: 'center',
@@ -62,9 +62,10 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
       boxShadow: 'var(--shadow)',
       position: 'sticky',
       top: 0,
-      zIndex: 1000
+      zIndex: 1000,
+      height: isMobile ? '56px' : '64px'
     }}>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div style={{ display: 'flex', alignItems: 'center', flex: 1, minWidth: 0 }}>
         {isMobile && (
           <Button
             type="text"
@@ -72,17 +73,24 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
             onClick={onMenuClick}
             style={{ 
               color: 'var(--text-color)',
-              marginRight: '12px'
+              marginRight: '8px',
+              height: '40px',
+              width: '40px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
             }}
           />
         )}
         <img 
-            src="./logo.svg"
+          src="./logo.svg"
           alt="Logo" 
           style={{ 
-            height: isMobile ? '24px' : '32px', 
-            marginRight: '12px',
-            filter: isDarkMode ? 'brightness(0) invert(1)' : 'none'
+            height: isMobile ? '28px' : '32px', 
+            width: isMobile ? '28px' : '32px',
+            marginRight: isMobile ? '8px' : '12px',
+            filter: isDarkMode ? 'brightness(0) invert(1)' : 'none',
+            flexShrink: 0
           }} 
         />
         <Title 
@@ -90,21 +98,33 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
           style={{ 
             margin: 0, 
             color: 'var(--primary-color)',
-            fontSize: isMobile ? '18px' : 'clamp(16px, 4vw, 24px)'
+            fontSize: isMobile ? '16px' : 'clamp(16px, 4vw, 24px)',
+            fontWeight: 600,
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            flex: 1,
+            minWidth: 0
           }}
         >
           {isMobile ? '筛查系统' : t('home.title')}
         </Title>
       </div>
       
-      <Space size={isMobile ? 'small' : 'middle'}>
+      <Space size={isMobile ? 'small' : 'middle'} style={{ flexShrink: 0 }}>
         <Button
           type="text"
           icon={isDarkMode ? <SunOutlined /> : <MoonOutlined />}
           onClick={toggleTheme}
           style={{ 
             color: 'var(--text-color)',
-            border: '1px solid var(--border-color)'
+            border: '1px solid var(--border-color)',
+            height: isMobile ? '36px' : '40px',
+            width: isMobile ? '36px' : '40px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            borderRadius: '8px'
           }}
           title={isDarkMode ? '切换到白天模式' : '切换到夜间模式'}
         />
@@ -119,7 +139,14 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
             icon={<GlobalOutlined />}
             style={{ 
               color: 'var(--text-color)',
-              border: '1px solid var(--border-color)'
+              border: '1px solid var(--border-color)',
+              height: isMobile ? '36px' : '40px',
+              minWidth: isMobile ? '36px' : 'auto',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              borderRadius: '8px',
+              fontSize: isMobile ? '14px' : '16px'
             }}
           >
             {!isMobile && (i18n.language === 'zh-CN' ? '中文' : 'English')}

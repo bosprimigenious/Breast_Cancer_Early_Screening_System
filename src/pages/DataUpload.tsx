@@ -153,20 +153,24 @@ const DataUpload: React.FC = () => {
 
   return (
     <div>
-      <Title level={2} style={{ marginBottom: '24px' }}>
+      <Title level={2} style={{ 
+        marginBottom: '20px',
+        textAlign: 'center',
+        fontSize: 'clamp(20px, 5vw, 28px)'
+      }}>
         数据上传
       </Title>
       
-      <Row gutter={[24, 24]}>
+      <Row gutter={[16, 16]}>
         <Col xs={24} lg={16}>
-          <Card title="文件上传区域" style={{ marginBottom: '24px' }}>
+          <Card title="文件上传区域" style={{ marginBottom: '20px' }}>
             <div
               {...getRootProps()}
               className={`upload-area ${isDragActive ? 'dragover' : ''}`}
               style={{
                 border: '2px dashed var(--border-color)',
-                borderRadius: '8px',
-                padding: '40px',
+                borderRadius: '12px',
+                padding: 'clamp(20px, 5vw, 40px)',
                 textAlign: 'center',
                 backgroundColor: 'var(--card-background)',
                 transition: 'all 0.3s',
@@ -174,14 +178,34 @@ const DataUpload: React.FC = () => {
               }}
             >
               <input {...getInputProps()} />
-              <InboxOutlined style={{ fontSize: '48px', color: 'var(--primary-color)', marginBottom: '16px' }} />
-              <Title level={4} style={{ color: 'var(--text-color)' }}>
+              <InboxOutlined style={{ 
+                fontSize: 'clamp(32px, 8vw, 48px)', 
+                color: 'var(--primary-color)', 
+                marginBottom: '16px' 
+              }} />
+              <Title level={4} style={{ 
+                color: 'var(--text-color)',
+                fontSize: 'clamp(16px, 4vw, 20px)',
+                marginBottom: '8px'
+              }}>
                 {isDragActive ? '释放文件到此处' : '拖拽文件到此处或点击上传'}
               </Title>
-              <Paragraph style={{ color: 'var(--text-color-secondary)', marginBottom: '16px' }}>
+              <Paragraph style={{ 
+                color: 'var(--text-color-secondary)', 
+                marginBottom: '16px',
+                fontSize: 'clamp(12px, 3vw, 14px)'
+              }}>
                 支持格式：TXT、PDF、PNG、JPG、DICOM
               </Paragraph>
-              <Button type="primary" size="large">
+              <Button 
+                type="primary" 
+                size="large"
+                style={{
+                  height: '44px',
+                  fontSize: '16px',
+                  borderRadius: '8px'
+                }}
+              >
                 选择文件
               </Button>
             </div>
