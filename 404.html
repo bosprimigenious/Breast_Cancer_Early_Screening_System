@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0; url=/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>正在重定向...</title>
+    <style>
+      body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; padding: 24px; }
+    </style>
+  </head>
+  <body>
+    <p>页面未找到，正在重定向到主页...</p>
+    <script>
+      // 兜底：若 meta 未生效，使用 JS 重定向
+      if (location.pathname && location.pathname !== '/') {
+        location.replace('/');
+      }
+    </script>
+  </body>
+</html>
+
+
