@@ -85,7 +85,8 @@ jspm_packages/
 
 # Gatsby files
 .cache/
-public
+# public 目录需要保留（包含 CNAME、静态资源）
+# 如果需要忽略构建产物，忽略 dist 即可
 
 # Storybook build outputs
 .out
