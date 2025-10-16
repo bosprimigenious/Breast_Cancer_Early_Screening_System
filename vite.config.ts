@@ -4,8 +4,8 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // GitHub Pages deployment → assets at repository root
-  base: '/Breast_Cancer_Early_Screening_System/',
+  // 自定义域子路径部署：资产与路由位于 /bcess/
+  base: '/bcess/',
   server: {
     port: 3000,
     open: true

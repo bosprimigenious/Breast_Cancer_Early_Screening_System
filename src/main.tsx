@@ -38,7 +38,7 @@ const AppWithTheme: React.FC = () => {
   )
 }
 
-const BASENAME = '/'
+const BASENAME = '/bcess/'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
