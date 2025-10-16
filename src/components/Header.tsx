@@ -83,7 +83,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
           />
         )}
         <img 
-          src={`/Breast_Cancer_Early_Screening_System/logo.svg`}
+          src={`/logo.svg`}
           alt="Logo" 
           style={{ 
             height: isMobile ? '28px' : '32px', 

@@ -38,7 +38,7 @@ const AppWithTheme: React.FC = () => {
   )
 }
 
-const BASENAME = '/Breast_Cancer_Early_Screening_System/'
+const BASENAME = '/'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
