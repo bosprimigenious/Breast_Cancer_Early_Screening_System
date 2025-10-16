@@ -38,10 +38,12 @@ const AppWithTheme: React.FC = () => {
   )
 }
 
+const BASENAME = '/Breast_Cancer_Early_Screening_System/'
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ThemeProvider>
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <BrowserRouter basename={BASENAME}>
         <AppWithTheme />
       </BrowserRouter>
     </ThemeProvider>

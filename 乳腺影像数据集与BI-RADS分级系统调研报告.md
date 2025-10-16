@@ -81,8 +81,11 @@ BI-RADS（Breast Imaging Reporting and Data System）是由美国放射学会（
 - **数据来源**：南佛罗里达大学
 
 **获取链接：**
-- 官网：http://www.eng.usf.edu/cvprg/Mammography/Database.html
-- 预处理版本：https://www.kaggle.com/datasets/ramanathansp/INbreast
+ - TCIA（CBIS-DDSM，推荐）：https://www.cancerimagingarchive.net/collection/cbis-ddsm/
+ - 论文（Scientific Data 2017）：https://www.nature.com/articles/sdata2017177
+ - TFDS（CBIS-DDSM）：https://github.com/tensorflow/datasets/tree/master/tensorflow_datasets/image_classification/cbis_ddsm
+ - USF 官方页（DDSM）：http://www.eng.usf.edu/cvprg/Mammography/Database.html
+ - 原始DDSM老站点（可能不稳定）：http://marathon.csee.usf.edu/Mammography/Database.html
 
 #### 3.1.3 INbreast数据集 ⭐⭐⭐
 **推荐指数：中等**
@@ -93,7 +96,8 @@ BI-RADS（Breast Imaging Reporting and Data System）是由美国放射学会（
 - **特点**：高质量标注，适合分割任务
 
 **获取链接：**
-- 官网：https://www.kaggle.com/datasets/ramanathansp/INbreast
+ - 官方申请：http://medicalresearch.inescporto.pt/breastresearch/index.php/Get_INbreast_Database
+ - 研究论文：https://www.sciencedirect.com/science/article/abs/pii/S107663321200056X
 
 ### 3.2 乳腺超声数据集
 
@@ -109,6 +113,7 @@ BI-RADS（Breast Imaging Reporting and Data System）是由美国放射学会（
 **获取链接：**
 - 论文：https://www.nature.com/articles/s41597-020-0392-y
 - 数据集：https://www.kaggle.com/datasets/aryashah2k/breast-ultrasound-images-dataset
+ - 官方GitHub：https://github.com/amine0110/Breast-Ultrasound-Images-Dataset
 
 #### 3.2.2 乳腺超声视频数据集 ⭐⭐⭐
 **推荐指数：中等**
@@ -238,10 +243,11 @@ BI-RADS（Breast Imaging Reporting and Data System）是由美国放射学会（
 - **标准化程度**：高
 - **获取难度**：中等（需要申请）
 
-#### 辅助数据集：BUSI超声数据集
-- **数据量**：780张超声图像
-- **标注信息**：分割掩码
-- **获取难度**：低（公开下载）
+#### 辅助数据集（建议并行使用）
+- **CBIS-DDSM（TCIA）**：用于补充钼靶检测/分级多样性与跨数据泛化
+  - 获取：https://www.cancerimagingarchive.net/collection/cbis-ddsm/
+- **BUSI超声数据集**：用于开展超声三分类与分割基线
+  - 获取：https://www.kaggle.com/datasets/aryashah2k/breast-ultrasound-images-dataset
 
 ## 6. 实施计划
 
@@ -304,6 +310,17 @@ BI-RADS（Breast Imaging Reporting and Data System）是由美国放射学会（
 2. **与导师讨论具体技术方案和资源需求**
 3. **制定详细的项目时间表和里程碑**
 4. **建立与临床医生的合作关系**
+
+## 附：关键链接清单（便于维护）
+- VinDr-Mammo 数据集：https://physionet.org/content/vindr-mammo/1.0.0/
+- VinDr-Mammo 论文：https://arxiv.org/abs/2203.11205
+- CBIS-DDSM 论文：https://www.nature.com/articles/sdata2017177
+- DDSM USF 官方页：http://www.eng.usf.edu/cvprg/Mammography/Database.html
+- BUSI 数据：https://www.kaggle.com/datasets/aryashah2k/breast-ultrasound-images-dataset
+- 超声视频 CVA-Net 论文：https://arxiv.org/abs/2207.00141
+- 超声视频 CVA-Net 代码：https://github.com/jhl-Det/CVA-Net
+- MMOTU 论文：https://arxiv.org/abs/2207.06799
+- MMOTU 代码：https://github.com/cv516Buaa/MMOTU_DS2Net
 
 ---
 
