@@ -1,37 +1,19 @@
-<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#1890ff;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#52c41a;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#f0f8ff;stop-opacity:1" />
-    </linearGradient>
   </defs>
   
-  <!-- 外圆环 -->
-  <circle cx="100" cy="100" r="95" fill="none" stroke="url(#gradient1)" stroke-width="8"/>
-  
-  <!-- 内圆 -->
-  <circle cx="100" cy="100" r="75" fill="url(#gradient2)" stroke="url(#gradient1)" stroke-width="4"/>
-  
-  <!-- 心形图标 -->
-  <path d="M100 60 C90 50, 75 50, 75 65 C75 80, 100 100, 100 100 C100 100, 125 80, 125 65 C125 50, 110 50, 100 60 Z" 
-        fill="url(#gradient1)" stroke="url(#gradient1)" stroke-width="2"/>
-  
-  <!-- 医疗十字 -->
-  <rect x="95" y="70" width="10" height="20" fill="white"/>
-  <rect x="87" y="78" width="26" height="10" fill="white"/>
-  
-  <!-- 装饰性小圆点 -->
-  <circle cx="60" cy="60" r="3" fill="url(#gradient1)"/>
-  <circle cx="140" cy="60" r="3" fill="url(#gradient1)"/>
-  <circle cx="60" cy="140" r="3" fill="url(#gradient1)"/>
-  <circle cx="140" cy="140" r="3" fill="url(#gradient1)"/>
+  <!-- 图标 -->
+  <circle cx="20" cy="20" r="18" fill="url(#logoGradient)"/>
+  <path d="M20 12 C18 10, 15 10, 15 13 C15 16, 20 22, 20 22 C20 22, 25 16, 25 13 C25 10, 22 10, 20 12 Z" fill="white"/>
+  <rect x="19" y="14" width="2" height="6" fill="url(#logoGradient)"/>
+  <rect x="17" y="16" width="6" height="2" fill="url(#logoGradient)"/>
   
   <!-- 文字 -->
-  <text x="100" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="url(#gradient1)">
-    乳腺癌筛查
+  <text x="45" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">
+    乳腺癌早期筛查系统
   </text>
 </svg>
