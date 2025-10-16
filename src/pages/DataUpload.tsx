@@ -163,7 +163,9 @@ const DataUpload: React.FC = () => {
       
       <Row gutter={[16, 16]}>
         <Col xs={24} lg={16}>
-          <Card title="文件上传区域" style={{ marginBottom: '20px' }}>
+          <Card title="文件上传区域" style={{ marginBottom: '20px' }}
+            styles={{ body: { padding: 16 } }}
+          >
             <div
               {...getRootProps()}
               className={`upload-area ${isDragActive ? 'dragover' : ''}`}

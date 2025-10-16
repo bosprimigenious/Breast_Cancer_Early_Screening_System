@@ -4,9 +4,8 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // When deploying to GitHub Pages for a project site, set base to 
-  // the repository name so asset URLs are generated correctly.
-  base: '/Breast_Cancer_Early_Screening_System/',
+  // Custom domain (subdomain) deployment → assets at domain root
+  base: '/',
   server: {
     port: 3000,
     open: true

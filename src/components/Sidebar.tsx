@@ -106,7 +106,7 @@ const Sidebar: React.FC = () => {
         gap: collapsed ? '8px' : '12px'
       }}>
         <img 
-          src="/logo.svg" 
+          src={`${import.meta.env.BASE_URL}logo.svg`} 
           alt="Logo" 
           style={{ 
             width: collapsed ? '24px' : '32px',

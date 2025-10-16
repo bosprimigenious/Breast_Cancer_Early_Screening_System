@@ -13,8 +13,7 @@
     <p>页面未找到，正在重定向到主页...</p>
     <script>
       // 兜底：若 meta 未生效，使用 JS 重定向
-      if (location.pathname && location.pathname !== '/') {
-        location.replace('/');
+      (function(){ location.replace('/') })()
       }
     </script>
   </body>

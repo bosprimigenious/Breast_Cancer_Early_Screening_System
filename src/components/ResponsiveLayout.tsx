@@ -65,10 +65,9 @@ const ResponsiveLayout: React.FC<ResponsiveLayoutProps> = ({ children }) => {
           onClose={handleDrawerClose}
           open={drawerVisible}
           width={280}
-          bodyStyle={{ padding: 0 }}
-          headerStyle={{ 
-            background: 'var(--card-background)',
-            borderBottom: '1px solid var(--border-color)'
+          styles={{
+            body: { padding: 0 },
+            header: { background: 'var(--card-background)', borderBottom: '1px solid var(--border-color)' }
           }}
         >
           <Sidebar />
